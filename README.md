@@ -5,7 +5,8 @@ This repository contains my precious dotfiles. I use [GNU Stow](https://www.gnu.
 ## Installation
 
 ```bash
-git clone git@github.com:ZionCorbanie/dot_files.git
+git clone git@github.com:ZionCorbanie/dotfiles.git
+mv dotfiles .dotfiles
 cd .dotfiles
 stow -t ~ *
 ```
