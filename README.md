@@ -8,7 +8,6 @@ first clone the repository.
 
 ```bash
 git clone git@github.com:ZionCorbanie/.dotfiles.git
-mv dotfiles ~/.dotfiles
 ```
 
 For zsh first download [oh-my-zsh](https://ohmyz.sh/) and remove the default `.zshrc` file.
