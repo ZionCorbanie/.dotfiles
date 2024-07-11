@@ -53,7 +53,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+t exec konsole
+#bindsym $mod+t exec konsole
+bindsym $mod+t exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
 
@@ -263,11 +264,11 @@ bindsym --release $mod exec notify-send 'mod released'
 # >>> Plasma Integration <<<
   # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everything)
 
-  exec --no-startup-id wmctrl -c Plasma
-  for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-  # Compositor (Animations, Shadows, Transparency)
-  exec --no-startup-id picom -cCFb
+  # exec --no-startup-id wmctrl -c Plasma
+  # for_window [title="Desktop — Plasma"] kill; floating enable; border none
+  #
+  # # Compositor (Animations, Shadows, Transparency)
+  # exec --no-startup-id picom -cCFb
 
 # >>> Window rules <<<
   # >>> Avoid tiling Plasma popups, dropdown windows, etc. <<<
@@ -294,4 +295,17 @@ bindsym --release $mod exec notify-send 'mod released'
     for_window [window_type="menu"] floating enable
     for_window [instance="__scratchpad"] floating enable
 
-exec --no-startup-id xsetroot -solid "#333333"
+assign [class="Xfce4-terminal"] $ws2
+assign [class="(?i)firefox"] $ws1
+
+for_window [class=Xfce4-terminal] focus
+for_window [class=(?i)firefox] focus
+exec --no-startup-id nitrogen --restore
+
+# Set inner/outer gaps
+gaps inner 6
+gaps outer 3
+
+for_window [class="^.*"] border pixel 3
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id picom -CGb
