@@ -7,7 +7,7 @@ This repository contains my dotfiles. I use [GNU Stow](https://www.gnu.org/softw
 first clone the repository.
 
 ```bash
-git clone git@github.com:ZionCorbanie/.dotfiles.git
+git clone --recursive git@github.com:ZionCorbanie/.dotfiles.git
 ```
 
 For zsh first download [oh-my-zsh](https://ohmyz.sh/) and remove the default `.zshrc` file.
@@ -20,6 +20,6 @@ rm ~/.zshrc
 Then use stow to install the dotfiles.
 
 ```bash
-cd dotfiles
+cd ~/.dotfiles
 stow -t ~ */
 ```
