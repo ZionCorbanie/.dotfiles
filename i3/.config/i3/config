@@ -224,10 +224,10 @@ bindsym --release $mod exec notify-send 'mod released'
     for_window [window_type="menu"] floating enable
     for_window [instance="__scratchpad"] floating enable
 
-assign [class="Xfce4-terminal"] $ws2
-assign [class="(?i)firefox"] $ws1
+# assign [class="Xfce4-terminal"] $ws2
+# assign [class="(?i)firefox"] $ws1
 
-for_window [class=Xfce4-terminal] focus
+# for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 exec --no-startup-id nitrogen --restore
 
@@ -236,7 +236,7 @@ gaps inner 6
 gaps outer 3
 
 for_window [class="^.*"] border pixel 3
-exec_always --no-startup-id autotiling
+# exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom -CGb
 
 # Make the currently focused window a scratchpad

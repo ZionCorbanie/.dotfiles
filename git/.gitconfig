@@ -3,3 +3,5 @@
 	name = Zion Corbanie
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
