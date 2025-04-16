@@ -115,5 +115,12 @@ set -o vi
 alias "vim"="nvim"
 alias "cd"="z"
 eval "$(zoxide init zsh)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export PATH=$PATH:/home/pepeshe/.local/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/pepeshe/.ghcup/bin
